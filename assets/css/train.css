@@ -68,8 +68,8 @@ th {
   background-color: rgb(5, 5, 5);
 }
 
-tr:hover {
-  background-color: rgb(252, 96, 35, 0.5);
+.tr-original:hover {
+  background-color: rgba(90, 67, 99, 0.315);
 }
 
 /* Ticket Form */
