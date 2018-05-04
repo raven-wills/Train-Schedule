@@ -1,5 +1,11 @@
 $(".btn-wrapper-day-night").on("click", function() {
   $(".layer").toggleClass("toggle-layer", 1000);
+  $("table").toggleClass("toggle-table", 1000);
+  $("th").toggleClass("toggle-th", 1000);
+  $("form").toggleClass("toggle-form", 1000);
+  $(".add-train-btn").toggleClass("toggle-add-train-btn", 1000);
+  $(".form-input").toggleClass("toggle-form-input", 1000);
+  $(".add-train-btn:active").toggleClass("toggle-add-train-btn:active", 1000);
 });
 
 // Initialize Firebase
@@ -16,7 +22,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // 2. Button for adding Employees
-$("#add-train-btn").on("click", function(event) {
+$(".add-train-btn").on("click", function(event) {
   event.preventDefault();
 
   // Grabs user input

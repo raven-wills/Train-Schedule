@@ -29,8 +29,17 @@ table {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+.toggle-table {
+  background-color: #333;
+  color: white;
+}
+
 th {
   background-color: #fc6023;
+}
+
+.toggle-th {
+  background-color: rebeccapurple;
 }
 
 .left-border {
@@ -47,8 +56,16 @@ th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #f7fcbc;
+}
+
+.toggle-tr:nth-child(even) {
+  background-color: rgb(39, 38, 38);
+} */
+
+.tr-toggle {
+  background-color: rgb(5, 5, 5);
 }
 
 tr:hover {
@@ -65,35 +82,32 @@ form {
   background: #fbfde0;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-top: 8px #fc6023 solid;
+  border-bottom: 8px #fc6023 solid;
+}
+
+.toggle-form {
+  background: #333;
+  border-top: 8px rebeccapurple solid;
+  border-bottom: 8px rebeccapurple solid;
+  color: white;
 }
 
 #formInput {
   padding: 8px;
 }
 
-input {
+.form-input {
   background-color: #f7facf;
   margin: 3px;
 }
 
-#top,
-#bottom {
-  background-color: #fc6023;
-  height: 10px;
-  width: 100%;
+.toggle-form-input {
+  background-color: rgb(36, 35, 35);
+  color: white;
 }
 
-#top {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-#bottom {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-#add-train-btn {
+.add-train-btn {
   margin-top: 3px;
   font-family: "VT323", monospace;
   font-size: 18px;
@@ -103,13 +117,23 @@ input {
   cursor: pointer;
 }
 
-#add-train-btn:active {
+.toggle-add-train-btn {
+  background-color: rebeccapurple;
+  border: 1px #333 solid;
+}
+
+.add-train-btn:active {
   color: #f5aa6d;
   background-color: #f5aa6d;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-#add-train-btn:focus {
+.toggle-add-train-btn:active {
+  background-color: #684a31;
+  color: #684a31;
+}
+
+.add-train-btn:focus {
   outline: none;
 }
 
