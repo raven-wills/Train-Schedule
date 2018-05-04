@@ -71,7 +71,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   while (nextTrain < moment()) {
     nextTrain.add(frequency, "m");
   }
-
   var minutesAway = nextTrain.diff(moment(), "m");
   //   var hoursAgo = moment().diff(firstTrain, "h");
   console.log(minutesAway);
