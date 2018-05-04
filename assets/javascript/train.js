@@ -47,9 +47,6 @@ $("#add-train-btn").on("click", function(event) {
   // Uploads employee data to the database
   database.ref().push(newTrain);
 
-  // Alert
-  alert("Train successfully added");
-
   // Clears all of the text-boxes
   $("#train-name-input").val("");
   $("#destination-input").val("");
@@ -59,31 +56,31 @@ $("#add-train-btn").on("click", function(event) {
 
 // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-  console.log(childSnapshot.val());
-
   // Store everything into a variable.
   var trainName = childSnapshot.val().name;
   var destination = childSnapshot.val().place;
-  var firstTrain = childSnapshot.val().first;
+  var firstTrain = moment(childSnapshot.val().first, "X");
   var frequency = childSnapshot.val().rate;
 
-  // Employee Info
   console.log(trainName);
   console.log(destination);
   console.log(firstTrain);
   console.log(frequency);
 
-  // Prettify the employee start
-  //   var empStartPretty = moment.unix(empStart).format("MM/DD/YY");
+  var nextTrain = firstTrain;
+  while (nextTrain < moment()) {
+    nextTrain.add(frequency, "m");
+  }
 
-  //   // Calculate the months worked using hardcore math
-  //   // To calculate the months worked
-  //   var empMonths = moment().diff(moment(empStart, "X"), "months");
-  //   console.log(empMonths);
+  var minutesAway = nextTrain.diff(moment(), "m");
+  //   var hoursAgo = moment().diff(firstTrain, "h");
+  console.log(minutesAway);
+  //   console.log(hoursAgo);
 
-  //   // Calculate the total billed rate
-  //   var empBilled = empMonths * empRate;
-  //   console.log(empBilled);
+  //   var nextTrain = moment()
+  //     .add(minutesAway, "m")
+  //     .format("HH:mm");
+  //   console.log(nextTrain);
 
   // Add each train's data into the table
   $(".train-table > tbody").append(
@@ -94,9 +91,9 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
       "</td><td>" +
       frequency +
       "</td><td>" +
-      "Works!" +
+      nextTrain.format("HH:mm") +
       "</td><td>" +
-      "Woop!" +
+      minutesAway +
       "</td></tr>"
   );
 });
