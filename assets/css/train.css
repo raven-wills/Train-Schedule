@@ -95,6 +95,7 @@ form {
 .form-input {
   background-color: #f7facf;
   margin: 3px;
+  transition: all 1s ease;
 }
 
 .toggle-form-input {
@@ -110,6 +111,7 @@ form {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 1s ease;
 }
 
 .toggle-add-train-btn {
