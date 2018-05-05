@@ -1,11 +1,13 @@
 $(".btn-wrapper-day-night").on("click", function() {
-  $(".layer").toggleClass("toggle-layer", 1000);
-  $("table").toggleClass("toggle-table", 1000);
-  $("th").toggleClass("toggle-th", 1000);
-  $("form").toggleClass("toggle-form", 1000);
-  $(".add-train-btn").toggleClass("toggle-add-train-btn", 1000);
-  $(".form-input").toggleClass("toggle-form-input", 1000);
-  $(".add-train-btn:active").toggleClass("toggle-add-train-btn:active", 1000);
+  $(".layer").toggleClass("toggle-layer");
+  $("table").toggleClass("toggle-table");
+  $("th").toggleClass("toggle-th");
+  $("form").toggleClass("toggle-form");
+  $(".add-train-btn").toggleClass("toggle-add-train-btn");
+  $(".form-input").toggleClass("toggle-form-input");
+  $(".add-train-btn:active").toggleClass("toggle-add-train-btn:active");
+  $(".mode").toggleClass("toggle-mode");
+  $(".night-mode").toggleClass("toggle-night");
 });
 
 // Initialize Firebase
@@ -38,9 +40,13 @@ $(".add-train-btn").on("click", function(event) {
       .trim(),
     "HH:mm"
   ).format("X");
-  var frequency = $("#frequency-input")
-    .val()
-    .trim();
+  var frequency = Number(
+    $("#frequency-input")
+      .val()
+      .trim()
+  );
+
+  console.log(frequency);
 
   // Creates local "temporary" object for holding employee data
   var newTrain = {

@@ -11,6 +11,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  transition: all 1s ease;
 }
 
 .toggle-layer {
@@ -27,6 +28,7 @@ table {
   background-color: #fbfde0;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
 }
 
 .toggle-table {
@@ -56,14 +58,6 @@ th {
   padding: 8px;
 }
 
-/* tr:nth-child(even) {
-  background-color: #f7fcbc;
-}
-
-.toggle-tr:nth-child(even) {
-  background-color: rgb(39, 38, 38);
-} */
-
 .tr-toggle {
   background-color: rgb(5, 5, 5);
 }
@@ -84,6 +78,7 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-top: 8px #fc6023 solid;
   border-bottom: 8px #fc6023 solid;
+  transition: all 1s ease;
 }
 
 .toggle-form {
@@ -135,6 +130,22 @@ form {
 
 .add-train-btn:focus {
   outline: none;
+}
+
+.toggle-mode {
+  color: white;
+}
+
+.mode {
+  transition: all 1s ease;
+}
+
+.night-mode {
+  visibility: hidden;
+}
+
+.toggle-night {
+  visibility: initial;
 }
 
 /* Day and Night Button */
